@@ -136,7 +136,7 @@
  <div id="opciones" style="display: none;" > <button class="btn btn-md" onclick="reproducirVideo(1)">Opción 1</button>
  <button class="btn btn-md" onclick="reproducirVideo(2)">Opción 2</button><button class="btn btn-md" onclick="reproducirVideo(3)">Opción 3</button><button class="btn btn-md" onclick="reproducirVideo(4)">Opción 4</button></div>
 <script type="text/javascript">
-                    if (embed) {document.write('<iframe class="shadow-lg rounded" width="100%" style="aspect-ratio:16/9;margin-bottom:20px" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen src="'+atob(embed)+'" scrolling="no" frameBorder="0" allowfullscreen></iframe>');}
+                    if (embed) {document.write('<iframe class="shadow-lg rounded" width="100%" style="aspect-ratio:16/9;margin-bottom:20px" frameborder="0" allow="autoplay; encrypted-media" sandbox="allow-forms allow-same-origin allow-scripts "allowfullscreen src="'+atob(embed)+'" scrolling="no" frameBorder="0" allowfullscreen></iframe>');}
                         </script>
 
 
