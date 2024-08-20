@@ -1,171 +1,312 @@
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="manifest" href="/favicon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
- <script src="/html/js.js"></script>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reproductor - Television Libre TV</title>
-<meta name="robots" content="noindex">
-<meta http-Equiv="Cache-Control" Content="no-cache" />
-<meta http-Equiv="Pragma" Content="no-cache" />
-<meta http-Equiv="Expires" Content="0" />
-<meta name="robots" content="noindex,nofollow">
-<link rel="stylesheet" href="/css/app.css">
-<link rel="stylesheet" href="/css/card.css">
-<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://kit.fontawesome.com/ccee9ace0a.js" crossorigin="anonymous"></script>    
-<script type="text/javascript">
-       function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-            results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
-
-    id = getParameterByName('p');
-    if (getParameterByName('embed')) {
-        embed = getParameterByName('embed');
-    } else {
-        if (getParameterByName('r')) {
-            embed = getParameterByName('r');
-        } else {
-            embed = false;
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Disfruta de transmisiones en vivo en MrGamingStreams. Accede a eventos deportivos y otros contenidos en línea de forma gratuita.">
+    <meta name="keywords" content="MrGamingStreams, transmisiones en vivo, eventos deportivos, streaming gratuito">
+    <title>MrGamingStreams - Eventos Deportivos en Vivo</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/logo.png">
+    <script src="script.js" defer></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8695615805843515"
+     crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-17BN46PSBK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-17BN46PSBK');
+    </script>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #141d26;
+            color: #fff;
         }
-    }
 
-
-      </script><script>
-    window.addEventListener('DOMContentLoaded', function() {
-        var urlParams = new URLSearchParams(window.location.search);
-        var parametroV = urlParams.get('v');
-
-        if (parametroV === 'star') {
-            document.getElementById('opciones').style.display = 'block';
-        } else {
-            document.getElementById('opciones').style.display = 'none';
+        /* Header */
+        header {
+            background-color: #1f2a38;
+            padding: 10px 0;
+            position: relative;
+            z-index: 1000;
         }
-    });
-</script>
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        /* Main Content */
+        main {
+            padding: 20px;
+        }
+
+        .video-container {
+            text-align: center;
+            position: relative;
+        }
+
+        .video {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .video iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 8px;
+        }
+
+        .ad-container {
+            width: 100%;
+            max-width: 728px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ad-container.horizontal {
+            margin: 20px 0;
+        }
+
+        .ad-container.vertical {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 160px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ad-container.left {
+            left: 0;
+        }
+
+        .ad-container.right {
+            right: 0;
+        }
+
+        .ad-container .ad {
+            display: block;
+        }
+
+        .video img {
+            max-width: 100%;
+        }
+
+        /* Share Section */
+        .share-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .sharethis-inline-share-buttons {
+            margin: 20px auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1f2a38;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-icon {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        .footer-content p {
+            margin: 0;
+        }
+
+        /* Media Queries */
+        @media (max-width: 767px) {
+            .menu {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu ul.active {
+                display: block;
+            }
+
+            .menu ul {
+                display: none;
+                flex-direction: column;
+            }
+
+            .menu li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 </head>
-<style>
-.button-container {
-  display: flex;
-  align-items: center;
-}
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">MrGamingStreams</div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                </ul>
+                <a href="javascript:void(0);" class="menu-toggle">&#9776;</a>
+            </div>
+        </nav>
+    </header>
 
-.md-link {
-  margin-right: 8px;
-}    
- .btn-md{background-color:#eef8fc!important;border:none;color:#141d26;padding:10px 26px;border-radius:12px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;margin:4px 2px;cursor:pointer}    
-.clean-gray{border:solid 1px #dedede;background:#efefef;color:#222;padding:4px;text-align:center}
-.my-0{margin-top:0!important;margin-bottom:0!important}
-.mr-md-auto{margin-right:auto!important}
-.btn-warning{color:#fff;background-color:#f0ad4e;border-color:#f0ad4e}.btn-warning:hover{color:#fff;background-color:#ec971f;border-color:#eb9316}.btn-warning:focus,.btn-warning.focus{-webkit-box-shadow:0 0 0 2px rgba(240,173,78,0.5);box-shadow:0 0 0 2px rgba(240,173,78,0.5)}.btn-warning.disabled,.btn-warning:disabled{background-color:#f0ad4e;border-color:#f0ad4e}.btn-warning:active,.btn-warning.active,.show > .btn-warning.dropdown-toggle{color:#fff;background-color:#ec971f;background-image:none;border-color:#eb9316}
-</style>    
-<body class="flex flex-col h-screen justify-between dark:bg-slate-800 dark:text-slate-300 font-sans">
-<div id="navbar"></div>
-<script>
-            $(document).ready(function() {
-                $("#navbar").load("/html/header.html");
-            });
-         </script>
-  
-<main class="container mx-auto px-4  max-w-7xl mb-auto">
-<div class="my-3">
-<div id="title"> 
-<script>    var titleParam = getParameterByName('title');   
-    if (titleParam) {
-        var titleElement = document.getElementById('title');
-        if (titleElement) {
-            titleElement.innerHTML = '<h1 class="text-3xl m-3">' + titleParam + '</h1>';
-        }
-    }</script></div>
-<div class="grid md:grid-cols-5 gap-3">
+    <main>
+        <section class="video-container">
+            <h1>Evento Deportivo En Vivo</h1>
+            
+            <!-- Horizontal Ad Unit -->
+            <div class="ad-container horizontal">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-8695615805843515"
+                     data-ad-slot="7651059306"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8695615805843515"
+                        crossorigin="anonymous"></script>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
 
- <div class="md:col-span-3 player w-full mx-auto">
- <div id="opciones" style="display: none;" > <button class="btn btn-md" onclick="reproducirVideo(1)">Opción 1</button>
- <button class="btn btn-md" onclick="reproducirVideo(2)">Opción 2</button></div>
-<script type="text/javascript">
-                    if (embed) {document.write('<iframe  class="shadow-lg rounded" width="100%" style="aspect-ratio:16/9;margin-bottom:20px" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen src="'+atob(embed)+'" scrolling="no" frameBorder="0" allowfullscreen></iframe>');}
-                        </script>
+            <div class="video">
+                <!-- Vertical Ad Units on the sides -->
+                <div class="ad-container vertical left">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-8695615805843515"
+                         data-ad-slot="8556946863"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8695615805843515"
+                            crossorigin="anonymous"></script>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
 
-  </div>
-  <div style="display: flex; flex-direction: column-reverse; align-items: flex-end;">
-
-</div>
-</main>
- 
-        <script>
-            function reproducirVideo(boton) {
-                var urlParams = new URLSearchParams(window.location.search);
-                var enlaceOriginal = urlParams.get('r');
-
-                if (enlaceOriginal) {
-                    var enlaceDecodificado = atob(enlaceOriginal);
-                    var enlaceModificado = "";
-
-                    switch (boton) {
-                        case 1:
-                            enlaceModificado = modificarEnlaceBoton1(enlaceDecodificado);
-                            break;
-                        case 2:
-                            enlaceModificado = modificarEnlaceBoton2(enlaceDecodificado);
-                            break;
-                        case 3:
-                            enlaceModificado = modificarEnlaceBoton3(enlaceDecodificado);
-                            break;
-                        default:
-                            enlaceModificado = enlaceDecodificado;
-                            break;
+                <script type="text/javascript">
+                    function getParameterByName(name) {
+                        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                        results = regex.exec(location.search);
+                        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
                     }
 
-                    var iframe = document.querySelector('.mx-auto iframe');
+                    var embed = getParameterByName('embed') || getParameterByName('r') || false;
 
-                    if (iframe) {
-                        iframe.src = enlaceModificado;
-
-                        iframe.play();
+                    if (embed) {
+                        document.write('<iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen src="' + atob(embed) + '" scrolling="no"></iframe>');
+                    } else {
+                        document.write('<img class="embed-responsive-item" src="https://img82.pixhost.to/images/0/329272052_error.png" width="100%">');
                     }
-                }
-            }
+                </script>
 
-            function modificarEnlaceBoton1(enlace) {
-                return enlace;
-            }
+                <div class="ad-container vertical right">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-8695615805843515"
+                         data-ad-slot="8556946863"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8695615805843515"
+                            crossorigin="anonymous"></script>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </section>
 
-            function modificarEnlaceBoton2(enlace) {
-                return enlace.replace('https://live-ftc-na-south-2.', 'https://live-ftc-sa-east-2.').replace('/ctr-all-complete.m3u8', '/ctr-all-sliding.m3u8');
-            }
+        <section class="share-section">
+            <h1>COMPARTE</h1>
+            <div class="sharethis-inline-share-buttons"></div>  
+            <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6230a1d02c883f0012a91334&amp;product=inline-share-buttons" async="async"></script>
+        </section>
+    </main>
 
-            function modificarEnlaceBoton3(enlace) {
-                return enlace.replace('https://live-ftc-na-south-2.', 'https://live-ftc-sa-east-2.').replace('/ctr-all-complete.m3u8', '/ctr-all-complete.m3u8');
-            }
-        </script>
-<div id="footer"></div>
-<script>
-            $(document).ready(function() {
-                $("#footer").load("/html/footer.html");
+    <footer>
+        <div class="footer-content">
+            <a href="https://twitter.com/mrgamingstreams" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <p>&copy; 2024 MrGamingStreams</p>
+        </div>
+    </footer>
+
+
+    <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            menuToggle.addEventListener('click', function() {
+                const menu = document.querySelector('.menu ul');
+                menu.classList.toggle('active');
             });
-         </script>
+        });
+    </script>
 </body>
 </html>
