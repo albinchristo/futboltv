@@ -1,913 +1,204 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>  
- <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="manifest" href="/favicon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
- <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=650bce971ce1b90012e5d869&product=sop' async='async'></script>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FullHDmatch - Ver Canales online en VIVO Online por Internet - TV Libre</title>
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://tv.fullhdmatch.org/" />
-<meta name="referrer" content="always">
-<meta name="description" content="Television Libre sitio para ver canales de TV online en vivo y en directo gratis por internet. Canales de television de manera Gratuita y Online Canales libres por TV Libre. - Televisión Libre ">
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Television Libre TV - Ver canales de TV online en vivo y en directo gratis" />
-<meta property="og:description" content="En Television Libre TV podes ver Canales de TV de forma Gratuita y Online " />
-<meta property="og:url" content="https://FullHDmatch.org" />
-<meta property="og:image" content="https://i.ibb.co/2sJmpV5/Untitled.png">
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:description" content=" Ver Canales de TV gratis online en vivo y en directo mira todos los canales de forma online por internet." />
-<meta name="twitter:image" content="https://i.ibb.co/2sJmpV5/Untitled.png" />
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q164TE1WR0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Q164TE1WR0');
-</script>
-<script src="https://kit.fontawesome.com/ccee9ace0a.js" crossorigin="anonymous"></script>   
-<link rel="stylesheet" href="/css/app.css">
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer Events</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+            margin: 20px;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        .event {
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            overflow: hidden;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+        }
+        .event:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .event-header {
+            padding: 12px 20px;
+            background-color: #1e40af;
+            color: #fff;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .event-title {
+            font-size: 1rem;
+        }
+        .event-time {
+            font-size: 0.85rem;
+            color: #ddd;
+        }
+        .event-details {
+            padding: 15px;
+            display: none;
+        }
+        .iframe-container {
+            margin-top: 15px;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 450px;
+            border-radius: 8px;
+        }
+        .event-date {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin: 20px 0 10px;
+            text-transform: uppercase;
+        }
+        .link-list {
+            margin-top: 10px;
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .link-item {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #1e40af;
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .link-item:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+        }
+        .category-icon {
+            font-size: 1.25rem;
+            margin-right: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-
-
-<style>
-.button-container {
-  display: flex;
-  align-items: center;
-}
-
-.md-link {
-  margin-right: 8px;
-}
- p.des {
-    margin-bottom: 5px;
-    text-align: center;
-    line-height: 23px;
-  color: #fff;
-  
- }
- #buscar::placeholder {
-    color: #fff; 
-}
- .d-none {
-    display: none !important; 
-}
-.main__filter-search,.main__filter-wrap {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    position: relative;
-
-}
-
-.main__filter-search {
-    margin-top: 10px
-}
-
-.main__filter-search input {
-    width: 100%;
-    height: 40px;
-    background-color: #141d26;
-    color: #fff ;
-    font-size: 14px;
-    border-radius: 12px;
-    border: none;
-    padding: 0 60px 0 20px;
-    font-family: Inter,sans-serif;
- --bs-card-border-width: 0.0625rem;
- --bs-card-border-color: hsl(0deg 0% 100% / 30%);
-  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
-
-}
- input:focus {
-
-   --bs-card-border-width: 0.0625rem;
- --bs-card-border-color: hsl(0deg 0% 100% / 30%);
-  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
-}
-.main__filter-search input:focus {
-    border-color: #141d26
-}
-
-.main__filter-search button {
-    position: absolute;
-    right: 20px;
-    top: 0;
-    height: 40px;
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center
-}
-
-.main__filter-search button svg {
-    width: 20px;
-    height: auto;
-    fill: #bdbdbd;
-    transition: .5s ease
-}
-
-.main__filter-search button:hover svg {
-    fill: #6164ff
-}
-.inf {
-    background-color: #eef8fc;
-    border-radius: 5px;
-
-    color: #1d2745;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 2px 10px;
-    position: absolute;
-  
-}
-.object-contain {
-
- object-fit: contain;
- margin-top: 1.6rem;
-}
-
- /* Para navegadores WebKit (Safari y Chrome) */
-::-webkit-scrollbar {
-  width: 12px; 
-}
-
-::-webkit-scrollbar-track {
-  background: #141d26; 
-}
-
-::-webkit-scrollbar-thumb {
-  background: #eef8fc; 
-}
-
- /* firefox */
-
-scrollbar-width: thin; 
-scrollbar-color: #141d26 #eef8fc ; 
-
-</style> <style media="screen">
-
-
-
-.wrapper{
-width: 100%;
-}
-.carousel{
-max-width: 1200px;
-margin: auto;
-padding: 0 30px;
-}
-
-
-
-
-  .owl-dots{
-text-align: center;
-margin-top: 25px;
-}
-.owl-dot{
-height: 15px;
-width: 30px;
-margin: 0 5px;
-outline: none;
-border-radius: 14px;
-border: 2px solid #35afe3!important;
-box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
-transition: all 0.3s ease;
-}
-.owl-dot.active,
-.owl-dot:hover{
-background: #35afe3!important;
-}
-
-
-
-  
- </style>
-<style type="text/css">@media screen and (min-width:0px) and (max-width:767px){.iframe-container iframe{height:266px}}</style>
-<body class="flex flex-col h-screen justify-between dark:bg-slate-800 dark:text-slate-300 font-sans">
-<nav class="bg-slate-100 shadow dark:bg-slate-700">
-<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-<div class="relative flex h-16 items-center justify-between">
-<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-<div class="flex flex-shrink-0 items-center">
-<a class="flex flex-shrink-0 items-center text-2xl logo" href="/"><img style="height:45px" class="block h-8 w-auto mr-2" src="https://tv.fullhdmatch.org/img/logo.png" alt="Logo de Television Libre">FullHDMatch</a>
-</div>
-</div>
-<div class="button-container">
-   <div style="background-color:#35afe3" class="dropdown">
-   
-
-
-
-
-</svg>
-</button>
-</div>
-</div>
-</nav>
-<main class="container mx-auto px-4  max-w-7xl mb-auto" style="padding:0!important">
-<div>
-<div class="md:col-span-2" bis_skin_checked="1">
- <br>
-<h1 class="text-3xl my-3 text-center">Agenda Deportiva</h1>
-<div class="iframe-container" style="padding:0;">
-
-<iframe  allowfullscreen="true" scrolling="auto" src="/agenda/" frameborder="0" width="100%" height="400"></iframe>
-
-      
-</div>
-<br>
-
-<h1 class="text-3xl my-3 text-center" style="
-    font-weight: 500;
-"> <span><i class="bx bxs-calendar-star" style="
-    margin: 10px;
-"></i></span>Eventos</h1>
-
-  <div class="wrapper">
-    <div class="carousel owl-carousel">
-
-
-     
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-         <span class="inf">Argentina</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/gran-hermano/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/gh.webp" title="Gran Hermano en VIVO online" alt="Gran Hermano">
-<p class="des">Ver Gran Hermano en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
- </div> 
-
-
-     
-        <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-   <span class="inf">Eventos</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/star-plus/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/starplus.webp" title="Star+ en VIVO online" alt="Star+ (Star Plus)">
-<p class="des" >Ver Star+ en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-            <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-   <span class="inf">Eventos</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/star-plus-br/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/starbr.png" title="Star+ Brasil en VIVO online" alt="Star+ BR (Star Plus Brasil)">
-<p class="des" >Ver Star+ BR en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-   <span class="inf">Eventos</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/vix-plus/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/vixplus.png" title="VIX+ en VIVO online" alt="VIX+ (VIX Plus)">
-<p class="des" >Ver VIX+ en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
- <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-   <span class="inf">Eventos</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/hbo-max/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="//television-libre.online/hbo-max/max.svg" title="MAX en VIVO online" alt="MAX (HBO MAX)">
-<p class="des" >Ver MAX en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-     
-      <!--   <div  class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-   <span class="inf">Eventos</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/nba-pass/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://cdn.nba.com/manage/2023/02/NBA_League_Pass_horiz_onDkBkgd-2.png" title="Nba League pass en VIVO online" alt="NBA LEague pass">
-<p class="des" >Ver NBA League Pass en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> -->
-
-    </div>
-  </div>
-
-<h1 class="text-3xl my-3 text-center">Canales online en vivo y en directo Gratis</h1>
- <div style="padding-left: 1rem;
-    padding-right: 1rem;" class="main__filter"><form action="#" class="main__filter-search search-form"><input autocomplete="off" id="buscar" type="text" placeholder="Buscar canal..." class="form-control" data-search="true"><button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z"></path></svg></button></form></div>
-
-</div>
-<div class="channels grid grid-cols-2 md:grid-cols-5 gap-6 my-5" style="padding-left: 1rem;
-    padding-right: 1rem;">
- 
-
- 
-
-
-
-
- 
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-   <span class="inf">Deportes</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/star-plus/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/starplus.webp" title="Star+ en VIVO online" alt="Star+ (Star Plus)">
-<p class="des" >Ver Star+ Eventos en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-   <span class="inf">Deportes</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/vix-plus/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/vixplus.png" title="VIX+ en VIVO online" alt="VIX+ (VIX Plus)">
-<p class="des" >Ver VIX+ Eventos en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-
-<div  class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">  
-<span class="inf">Deportes</span>
- <a class="flex flex-col justify-evenly items-center h-full channel-link"
- href="/en-vivo/nba-tv/"><img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/nba.png"
-title="NBA TV en VIVO online" alt="NBA TV">
-<p class="des">Ver NBA TV en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
- 
-
- 
-   <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-   <span class="inf">Deportes</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/liga1max/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/liga1max.webp" title="Liga1 MAX en VIVO online" alt="Liga 1 Max (Liga1)">
-<p class="des" >Ver Liga 1 MAX en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-   <span class="inf">Deportes</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/html/eventos/?r=aHR0cHM6Ly9jbGFyb3ZpZGVvLmxpYnJlZnV0Ym9sdHYuY29tL21wZGsyLmh0bWw/Z2V0PUx5OXNZWFJoYlhadmMyeHBkbVZqYkdGeWIzWnBaR1Z2TG1GcllXMWhhWHBsWkM1dVpYUXZRMjl1ZEdWdWRDOUVRVk5JWDBSQlUwaGZSa3N2VEdsMlpTOURhR0Z1Ym1Wc0tFTk1RVkpQWDFOUVQxSlVVMTlNUVZSQlRWOUlSQ2t2YldGdWFXWmxjM1F1YlhCayZrZXk9TnpSalpHTmlOak5tWmpObE5HWXpZMlUwWkdFME1qUXpZalprTVdVeFpEZyZrZXkyPU9XSTRNelkyWm1FNFpUbGxZbU5rWmpSaU16UTVaRFpqT1dRMU1qZ3hNVFU=">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/clarosp.png" title="Claro Sports en VIVO online" alt="Claro Sports">
-<p class="des" >Ver Claro Sports en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
- 
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-   <span class="inf">Deportes</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/html/eventos/?r=aHR0cHM6Ly9hbGthZGVhLmNvbS9wbGF5ZXJzL2dhcy5odG1sP2lkPURBWk5fMV9FUw==">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://pelotalibretvhd.com/img/dazn1.png" title="DAZN 1 España en VIVO online" alt="DAZN 1 España">
-<p class="des" >Ver DAZN 1 ES en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-
- <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-   <span class="inf">Deportes</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/html/eventos/?r=aHR0cHM6Ly9hbGthZGVhLmNvbS9wbGF5ZXJzL2dhcy5odG1sP2lkPURBWk5fMl9FUw==">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://pelotalibretvhd.com/img/dazn2.webp" title="DAZN 2 España en VIVO online" alt="DAZN 2 España">
-<p class="des" >Ver DAZN 2 ES en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
- 
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-   <span class="inf">Deportes</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/html/eventos/?r=aHR0cHM6Ly9hbGthZGVhLmNvbS9wbGF5ZXJzL2dhcy5odG1sP2lkPURBWk5fTEFfTElHQV9PUDI=">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="https://pelotalibretvhd.com/img/daznll.png" title="DAZN Laliga  España en VIVO online" alt="DAZN Laliga  España">
-<p class="des" >Ver DAZN Laliga ES  en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-
-
-
- <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-       <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/paramount-network/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/paramount.webp" title="Paramount Network en VIVO online" alt="Paramount Network">
-<p class="des" >Ver Paramount Network en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-       <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/amc/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/amc.webp" title="AMC en VIVO online" alt="AMC">
-<p class="des" >Ver AMC en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
- <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-       <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/axn/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/axn.webp" title="AXN en VIVO online" alt="AXN">
-<p class="des" >Ver AXN en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/tcm/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/tcm.webp" title="TCM en VIVO online" alt="TCM">
-<p class="des" >Ver TCM en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
- <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/e/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/e.webp" title="E! Entertainment en VIVO online" alt="E! Entertainment">
-<p class="des" >Ver E! en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
- 
-   <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/a3cine/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/a3cine.png" title="A3CINE en VIVO online" alt="A3CINE">
-<p class="des" >Ver A3CINE en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
- 
-
-
-
- 
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/cinear/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/cinear.png" title="CineAR en VIVO online" alt="Cine AR">
-<p class="des" >Ver Cine AR en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-
-
- 
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/hbo/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/hbo.webp" title="HBO en VIVO online" alt="HBO">
-<p class="des" >Ver HBO en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/hbo-2/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/hbo2.webp" title="HBO 2 en VIVO online" alt="HBO 2">
-<p class="des" >Ver HBO 2 en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/hbo-plus/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/hboplus.webp" title="HBO Plus en VIVO online" alt="HBO Plus">
-<p class="des" >Ver HBO Plus en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/hbo-family/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/hbofam.webp" title="HBO Family en VIVO online" alt="HBO Family">
-<p class="des" >Ver HBO Family en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
- <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/hbo-xtreme/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/hboxtreme.webp" title="HBO Xtreme en VIVO online" alt="HBO Xtreme">
-<p class="des" >Ver HBO Xtreme en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/hbo-mundi/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/hbomundi.webp" title="HBO Mundi en VIVO online" alt="HBO Mundi">
-<p class="des" >Ver HBO Mundi en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/hbo-pop/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/hbopop.webp" title="HBO Pop en VIVO online" alt="HBO Pop">
-<p class="des" >Ver HBO Pop en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/hbo-sig/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/hbosig.webp" title="HBO Signature en VIVO online" alt="HBO Signature">
-<p class="des" >Ver HBO Signature en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-
-
-   <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/unitv/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/unitv.webp" title="Universal TV en VIVO online" alt="Universal TV">
-<p class="des" >Ver Universal TV en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-
-   <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/universal-cinema/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/universalcinema.webp" title="Universal Cinema en VIVO online" alt="Universal Cinema">
-<p class="des" >Ver Universal Cinema en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-
-   <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/universal-crime/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/universalcrime.webp" title="Universal Crime en VIVO online" alt="Universal Crime">
-<p class="des" >Ver Universal Crime en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-
-    <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/universal-comedy/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/universalcomedy.webp" title="Universal Comedy en VIVO online" alt="Universal Comedy">
-<p class="des" >Ver Universal Comedy en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-    <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/universal-reality/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/universalreality.webp" title="Universal Reality en VIVO online" alt="Universal Reality">
-<p class="des" >Ver Universal Reality en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
- 
- <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/universal-premiere/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/universalpremiere.webp" title="Universal Premiere en VIVO online" alt="Universal Premiere">
-<p class="des" >Ver Universal Premiere en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
- 
-   <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/golden-plus/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/golden.png" title="Golden Plus en VIVO online" alt="Golden Plus (Golden +)">
-<p class="des" >Ver Golden Plus en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/pasiones/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/pasiones.webp" title="Pasiones en VIVO online" alt="Pasiones">
-<p class="des" >Ver Pasiones en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-   <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/estrellas/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/estrellas.png" title="Las Estrellas en VIVO online" alt="Las Estrellas">
-<p class="des" >Ver Las Estrellas en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-   <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/tlnovelas/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/tlnovelas.png" title="Tlnovelas en VIVO online" alt="Tlnovelas">
-<p class="des" >Ver Tlnovelas en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-<div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
- <span class="inf">Internacional</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/antena3/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/antena3.webp" title="Antena 3 en VIVO online" alt="Antena 3">
-<p class="des" >Ver Antena 3  en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
- 
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
- <span class="inf">Mexico</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/html/eventos/?r=aHR0cHM6Ly90ZWxldmlzaW9uLWxpYnJlLm9ubGluZS9odG1sL2hscy5odG1sP2dldD1hSFIwY0hNNkx5OWhlblF0YjI4dWIzUjBaWEpoZG1semFXOXVMbU52YlM5dmRYUXZkakV2WkdFMU0yUTNaRE00T0dKbE5ETTNaVGt5WW1ZNFpqUTJOREF4T0dWaU5EZ3ZhVzVrWlhndWJUTjFPQT09">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/azuno.png" title="Azteca Uno en VIVO online" alt="Azteca Uno">
-<p class="des" >Ver Azteca Uno en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-
-    <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
- <span class="inf">Internacional</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/html/eventos/?r=aHR0cHM6Ly90ZWxldmlzaW9uLWxpYnJlLm9ubGluZS9odG1sL2hscy5odG1sP2dldD1hSFIwY0hNNkx5OXpkSEpsWVcwdVlXUnpMbTkwZEdWeVlTNTBkaTl3YkdGNWJHbHpkQzV0TTNVNFAyNWxkSGR2Y210ZmFXUTlORGd6TUE9PQ==">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/azcorazon.png" title="Azteca Corazon en VIVO online" alt="Azteca Corazon">
-<p class="des" >Ver Azteca Corazon en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-   <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
- <span class="inf">Internacional</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/html/eventos/?r=aHR0cHM6Ly90ZWxldmlzaW9uLWxpYnJlLm9ubGluZS9odG1sL2hscy5odG1sP2dldD1hSFIwY0hNNkx5OXpkSEpsWVcwdVlXUnpMbTkwZEdWeVlTNTBkaTl3YkdGNWJHbHpkQzV0TTNVNFAyNWxkSGR2Y210ZmFXUTlORGd5Tnc9PQ==">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/azclic.png" title="Azteca Clic en VIVO online" alt="Azteca Clic">
-<p class="des" >Ver Azteca Clic en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
- 
-   <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
- <span class="inf">Internacional</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/html/eventos/?r=aHR0cHM6Ly90ZWxldmlzaW9uLWxpYnJlLm9ubGluZS9odG1sL2hscy5odG1sP2dldD1hSFIwY0hNNkx5OXpkSEpsWVcwdVlXUnpMbTkwZEdWeVlTNTBkaTl3YkdGNWJHbHpkQzV0TTNVNFAyNWxkSGR2Y210ZmFXUTlORFkxTXlaaGRtOWtQVEVtWTI5d2NHRTlNQ1pwYzE5c1lYUTlNQ1prYm5ROU1DWjFjMTl3Y21sMllXTjVQVEZaVGkwbVpHbGtQV014TkRGaU9UYzBPVEF3WlRJME1qSTBOMlF3WVRJMk1URTROREF5WlRBd0ptRndjRjlpZFc1a2JHVTlZMjl0TG5SMllYcDBaV05oTG14cGRtVW1ZWEJ3WDNOMGIzSmxYM1Z5YkQxb2RIUndjeVV6UVNVeVJpVXlSbmQzZHk1dmRIUmxjbUV1ZEhZbE1rWmtaWFpwWTJWekptRndjRjlrYjIxaGFXNDliM1IwWlhKaExuUjJKbUZ3Y0Y5dVlXMWxQWFIyWVhwMFpXTmhKbU4xYzNSdmJWOTBZWEpuWlhScGJtYzlkMlZpSm1OMWMzUnZiVjgwUFdsdWRHVnlibUZzSm1nOU56SXdKbmM5TVRJNE1DWmpiMjUwWlc1MFgyTm9ZVzV1Wld3OWRIWmhlblJsWTJFbVkyOXVkR1Z1ZEY5a2FYTjBYMjVoYldVOWFXNTBaWEp1WVd3bVpHVjJhV05sWDIxaGEyVTlKbVJsZG1salpWOXRiMlJsYkQwbWNISmxabVZ5Y21Wa1gyeGhibWQxWVdkbFBVVk9KbU52Ym5ObGJuUTlNU1puWkhCeVBUQW1ZM1Z6ZEc5dFh6RXlQVEFtWTNWemRHOXRYekUxUFdWekptTjFjM1J2YlY4eE5qMUZUaVpqZFhOMGIyMWZNVGM5Wlc0bWMybDBaVjl3WVdkbFBXOTBkR1Z5WVM1MGRpWm5aVzVrWlhJOWJtOTBYM053WldOcFptbGxaQ1o1YjJJOU1DWnNhWFpsYzNSeVpXRnRQVEVtWTNWemRHOXRYM0JoY21GdFh6RTlaR1Z6YTNSdmNDWmpkWE4wYjIxZmNHRnlZVzFmTkQxcGJuUmxjbTVoYkNaamRYTjBiMjFmY0dGeVlXMWZOVDEzWldJbVkzVnpkRzl0WDNCaGNtRnRYelk5VTI5MWRHZ2xNakJCYldWeWFXTmhKbU4xYzNSdmJWOXdZWEpoYlY4d1BTWmpkWE4wYjIxZmNHRnlZVzFmTWowbVkzVnpkRzl0WDNCaGNtRnRYek05">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/azcinema.png" title="Azteca Cinema en VIVO online" alt="Azteca Cinema">
-<p class="des" >Ver Azteca Cinema en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
- 
-
-
-   <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-       <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/glitz/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/gl.png" title="Glitz en VIVO online" alt="Glitz">
-<p class="des" >Ver Glitz en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
-
- 
-  <div   class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-       <span class="inf">Entretenimiento</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/adult-swim/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/adults.png" title="Adult Swim en VIVO online" alt="Adult Swim (Trutv) AS">
-<p class="des" >Ver Adult Swim en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
- 
- <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Infantiles</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/cartoon-network/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/cn.webp" title="Cartoon Network en VIVO online" alt="Cartoon Network">
-<p class="des" >Ver Cartoon Network en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div> 
-
- <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Infantiles</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/cartoonito/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/cart.webp" title="Cartoonito en VIVO online" alt="Cartoonito">
-<p class="des" >Ver Cartoonito en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-
- 
- <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-       <span class="inf">Infantiles</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/disney-channel/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/disney.webp" title="Disney Channel en VIVO online" alt="Disney Channel">
-<p class="des" >Ver Disney Channel en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-
- <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-       <span class="inf">Infantiles</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/disney-jr/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/disneyjr.webp" title="Disney Junior en VIVO online" alt="Disney Junior">
-<p class="des" >Ver Disney Junior en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-       <span class="inf">Infantiles</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/discovery-kids/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/diskids.webp" title="Discovery Kids en VIVO online" alt="Discovery Kids">
-<p class="des" >Ver Discovery Kids en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-
-
-   <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-       <span class="inf">Infantiles</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/nick/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/nick.png" title="Nickelodeon en VIVO online" alt="Nickelodeon">
-<p class="des" >Ver Nickelodeon en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-
- <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-       <span class="inf">Infantiles</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/nickjr/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/nickjr.webp" title="Nick Junior en VIVO online" alt="Nick Jr. (Nick Junior)">
-<p class="des" >Ver Nick Jr. en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-       <span class="inf">Infantiles</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/dreamworks/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/dream.png" title="DreamWorks  en VIVO online" alt="DreamWorks Channel">
-<p class="des" >Ver DreamWorks  en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Música</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/flow-music/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/flowmusic.webp" title="Flow Music en VIVO online" alt="Flow Music">
-<p class="des" >Ver Flow Music en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>  
-
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Música</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/quiero/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/quiero.webp" title="Quiero Musica en mi idioma en VIVO online" alt="Quiero Musica">
-<p class="des" >Ver Quiero Música en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>  
-
- <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Música</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/mtv/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/mtv.webp" title="MTV en VIVO online" alt="MTV">
-<p class="des" >Ver MTV en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>  
-
- 
- <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Música</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/mtvhts/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/mtvhts.webp" title="MTV Hits en VIVO online" alt="MTV Hits">
-<p class="des" >Ver MTV Hits en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>  
-
-
- <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Música</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/mtv00s/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/mtv00s.png" title="MTV 00s en VIVO online" alt="MTV 00s">
-<p class="des" >Ver MTV 00s en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>  
-
-  <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Música</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/htv/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/htv.webp" title="HTV en VIVO online" alt="HTV">
-<p class="des" >Ver HTV en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>  
-
- <div class="p-2 rounded bg-slate-200 border dark:bg-slate-700 dark:border-gray-600">
-  <span class="inf">Música</span>
-<a class="flex flex-col justify-evenly items-center h-full channel-link" href="/en-vivo/cm/">
-<img class="w-28 h-28 object-contain rounded" loading="lazy" src="/img/cm.webp" title="CM en VIVO online" alt="CM (Canal de la Música)">
-<p class="des" >Ver CM en vivo online</p>
-<span class="bg-cyan-700 hover:bg-cyan-800 p-2 text-center block w-full m-2 rounded text-white mt-auto">Ver canal</span>
-</a>
-</div>  
-
-
-</div>
-</div>
-</section>
-
- <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
-</div>
-</main>
-<footer class="mt-4 bg-slate-200 text-zinc-600 py-4 dark:bg-slate-700">
-<div class="container mx-auto px-4 text-center">
-<p class="text-gray-800 dark:text-slate-300">Television Libre TV Online 2024 &copy; Todos los derechos reservados.</p>
-<a href="/dmca.html" rel="nofollow"> DMCA </a> </a></center>
-</div>
-</footer>
-<script>$(document).ready(function() {
-    $('#buscar').on('input', function() {
-        var value = $(this).val().toLowerCase();
-        $('.channels > div').each(function() {
-            var imageAlt = $(this).find('img').attr('alt').toLowerCase();
-            var cardVisible = imageAlt.indexOf(value) > -1;
-
-        
-            if (cardVisible) {
-                $(this).removeClass('d-none'); 
-            } else {
-                $(this).addClass('d-none'); 
+<body>
+    <h1>Soccer Events</h1>
+    <div id="events-container">Loading...</div>
+
+    <script>
+        async function fetchEvents() {
+            try {
+                const response = await fetch('https://sons-stream.com/api/v1/');
+                const data = await response.json();
+                displayEvents(data);
+            } catch (error) {
+                console.error('Error fetching events:', error);
+                document.getElementById('events-container').innerHTML = 'Failed to load events.';
             }
-        });
-    });
-});
+        }
 
-</script>
-<script> $(".carousel").owlCarousel({
-  margin: 20,
-  loop: true,
-  autoplay: true,
-  autoplayTimeout: 4500,
-  autoplayHoverPause: true,
-  responsive: {
-      0: { items: 1, nav: false },
-      600: { items: 2, nav: false },
-      1000: { items: 3, nav: false },
-  },
-});
- </script>
+        function displayEvents(events) {
+            const container = document.getElementById('events-container');
+            container.innerHTML = ''; // Clear the loading text
 
+            const eventsByDate = events.reduce((acc, event) => {
+                const date = event.event_start.split(' ')[0];
+                if (!acc[date]) acc[date] = [];
+                acc[date].push(event);
+                return acc;
+            }, {});
+
+            for (const [date, events] of Object.entries(eventsByDate)) {
+                const dateHeader = document.createElement('div');
+                dateHeader.className = 'event-date';
+                dateHeader.textContent = new Date(date).toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+                container.appendChild(dateHeader);
+
+                events.forEach((event, index) => {
+                    const eventDiv = document.createElement('div');
+                    eventDiv.className = 'event';
+
+                    const categoryIcon = getCategoryIcon(event.category_name);
+                    const eventTime = new Date(event.event_start).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+                    eventDiv.innerHTML = `
+                        <div class="event-header">
+                            <span class="event-title">
+                                <span class="category-icon">${categoryIcon}</span>
+                                ${event.event_title.trim()}
+                            </span>
+                            <span class="event-time">${eventTime}</span>
+                        </div>
+                        <div class="event-details">
+                            <p><strong>Start Time:</strong> ${event.event_start}</p>
+                            <p><strong>League:</strong> ${event.league_name}</p>
+                            <p><strong>Category:</strong> ${event.category_name}</p>
+                            <div class="link-list"></div>
+                        </div>
+                    `;
+                    container.appendChild(eventDiv);
+
+                    // Add click event listener to toggle event details and display iframe links
+                    eventDiv.querySelector('.event-header').addEventListener('click', () => {
+                        const details = eventDiv.querySelector('.event-details');
+                        const linkList = eventDiv.querySelector('.link-list');
+
+                        if (details.style.display === 'block') {
+                            details.style.display = 'none';
+                            linkList.innerHTML = ''; // Clear links
+                        } else {
+                            details.style.display = 'block';
+                            linkList.innerHTML = ''; // Clear previous links
+
+                            const iframes = event.channel_embeds.split(',');
+                            iframes.forEach((iframe, idx) => {
+                                const encodedSrc = btoa(iframe.match(/src="([^"]+)"/)[1]);
+                                const link = document.createElement('a');
+                                link.href = `https://todopelotatvhd.com/embed/eventos.html?r=${encodedSrc}`;
+                                link.target = '_blank';
+                                link.textContent = `Link ${idx + 1}`;
+                                link.className = 'link-item';
+                                linkList.appendChild(link);
+                            });
+                        }
+                    });
+                });
+            }
+        }
+
+        function getCategoryIcon(category) {
+            const icons = {
+                soccer: '⚽',
+                basketball: '🏀',
+                tennis: '🎾',
+                // Add more categories and icons as needed
+            };
+            return icons[category.toLowerCase()] || '🏅';
+        }
+
+        // Fetch and display events on page load
+        fetchEvents();
+    </script>
 </body>
 </html>
