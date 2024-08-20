@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soccer Events</title>
+    <title> Events</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -40,9 +40,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
         .event-title {
             font-size: 1rem;
+            display: flex;
+            align-items: center;
         }
         .event-time {
             font-size: 0.85rem;
@@ -71,30 +74,28 @@
         .link-list {
             margin-top: 10px;
             padding-left: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
         }
         .link-item {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #1e40af;
-            color: #fff;
+            display: block;
+            margin-bottom: 8px;
+            color: #1d4ed8;
             font-size: 0.9rem;
-            font-weight: 600;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: color 0.2s ease;
+            border: 1px solid #1d4ed8;
+            border-radius: 4px;
+            padding: 5px 10px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .link-item:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
+            color: #2563eb;
+            background-color: #e0e7ff;
         }
-        .category-icon {
-            font-size: 1.25rem;
+        .league-logo {
+            width: 20px;
+            height: 20px;
             margin-right: 10px;
+            vertical-align: middle;
         }
         .hidden {
             display: none;
@@ -139,13 +140,13 @@
                     const eventDiv = document.createElement('div');
                     eventDiv.className = 'event';
 
-                    const categoryIcon = getCategoryIcon(event.category_name);
-                    const eventTime = convertToUserTime(event.event_start);
+                    const leagueLogo = getLeagueLogo(event.league_name.trim());
+                    const eventTime = new Date(event.event_start).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
                     eventDiv.innerHTML = `
                         <div class="event-header">
                             <span class="event-title">
-                                <span class="category-icon">${categoryIcon}</span>
+                                <img src="${leagueLogo}" alt="${event.league_name}" class="league-logo">
                                 ${event.event_title.trim()}
                             </span>
                             <span class="event-time">${eventTime}</span>
@@ -173,16 +174,13 @@
 
                             const iframes = event.channel_embeds.split(',');
                             iframes.forEach((iframe, idx) => {
-                                const srcMatch = iframe.match(/src="([^"]+)"/);
-                                if (srcMatch) {
-                                    const encodedSrc = btoa(srcMatch[1]);
-                                    const link = document.createElement('a');
-                                    link.href = `https://todopelotatvhd.com/embed/eventos.html?r=${encodedSrc}`;
-                                    link.target = '_blank';
-                                    link.textContent = `Link ${idx + 1}`;
-                                    link.className = 'link-item';
-                                    linkList.appendChild(link);
-                                }
+                                const encodedSrc = btoa(iframe.match(/src="([^"]+)"/)[1]);
+                                const link = document.createElement('a');
+                                link.href = `https://todopelotatvhd.com/embed/eventos.html?r=${encodedSrc}`;
+                                link.target = '_blank';
+                                link.textContent = `Link ${idx + 1}`;
+                                link.className = 'link-item';
+                                linkList.appendChild(link);
                             });
                         }
                     });
@@ -190,20 +188,16 @@
             }
         }
 
-        function getCategoryIcon(category) {
-            const icons = {
-                soccer: '⚽',
-                basketball: '🏀',
-                tennis: '🎾',
-                // Add more categories and icons as needed
+        function getLeagueLogo(leagueName) {
+            const logos = {
+                'mma/ufc': 'https://backlinkhd.com/assets/uploads/leagues/28.png',
+                'nfl': 'https://backlinkhd.com/assets/uploads/leagues/29.png',
+                'motorsport': 'https://backlinkhd.com/assets/uploads/leagues/9.png',
+                'la liga': 'https://backlinkhd.com/assets/uploads/leagues/79.png',
+                'bundesliga': 'https://backlinkhd.com/assets/uploads/leagues/78.jpg',
+                'premier league': 'https://backlinkhd.com/assets/uploads/leagues/13.png'
             };
-            return icons[category.toLowerCase()] || '🏅';
-        }
-
-        function convertToUserTime(utcDateTime) {
-            // Convert UTC date-time to local time
-            const localDate = new Date(utcDateTime);
-            return localDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZoneName: 'short' });
+            return logos[leagueName.toLowerCase()] || 'https://backlinkhd.com/assets/uploads/leagues/79.png'; // Fallback image
         }
 
         // Fetch and display events on page load
