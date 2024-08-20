@@ -140,7 +140,7 @@
                     eventDiv.className = 'event';
 
                     const categoryIcon = getCategoryIcon(event.category_name);
-                    const eventTime = new Date(event.event_start).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                    const eventTime = convertToUserTime(event.event_start);
 
                     eventDiv.innerHTML = `
                         <div class="event-header">
@@ -173,13 +173,16 @@
 
                             const iframes = event.channel_embeds.split(',');
                             iframes.forEach((iframe, idx) => {
-                                const encodedSrc = btoa(iframe.match(/src="([^"]+)"/)[1]);
-                                const link = document.createElement('a');
-                                link.href = `https://todopelotatvhd.com/embed/eventos.html?r=${encodedSrc}`;
-                                link.target = '_blank';
-                                link.textContent = `Link ${idx + 1}`;
-                                link.className = 'link-item';
-                                linkList.appendChild(link);
+                                const srcMatch = iframe.match(/src="([^"]+)"/);
+                                if (srcMatch) {
+                                    const encodedSrc = btoa(srcMatch[1]);
+                                    const link = document.createElement('a');
+                                    link.href = `https://todopelotatvhd.com/embed/eventos.html?r=${encodedSrc}`;
+                                    link.target = '_blank';
+                                    link.textContent = `Link ${idx + 1}`;
+                                    link.className = 'link-item';
+                                    linkList.appendChild(link);
+                                }
                             });
                         }
                     });
@@ -195,6 +198,12 @@
                 // Add more categories and icons as needed
             };
             return icons[category.toLowerCase()] || '🏅';
+        }
+
+        function convertToUserTime(utcDateTime) {
+            // Convert UTC date-time to local time
+            const localDate = new Date(utcDateTime);
+            return localDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZoneName: 'short' });
         }
 
         // Fetch and display events on page load
