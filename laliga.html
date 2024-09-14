@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HLS Player with Google Ad Popup</title>
+    <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+    <style>
+        /* Fullscreen and responsive styles */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+
+        #player-container {
+            position: relative;
+            width: 80%;
+            max-width: 1200px;
+            height: 70vh;
+        }
+
+        #player {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+        }
+
+        /* Popup Ad Styling */
+        #popup-ad {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        #close-ad-btn {
+            background-color: #FF0000;
+            padding: 10px 20px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        /* Ad container styling */
+        .adsbygoogle {
+            width: 100%;
+            max-width: 728px;
+            height: 90px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Player container -->
+    <div id="player-container">
+        <div id="player"></div>
+
+        <!-- Popup Ad with Google AdSense -->
+        <div id="popup-ad">
+            <div>
+                <!-- Google AdSense Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-8695615805843515"
+                     data-ad-slot="3664258978"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8695615805843515"
+                        crossorigin="anonymous"></script>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- Close Ad button -->
+                <button id="close-ad-btn">Close Ad & Continue to Video</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Popup ad functionality
+        document.getElementById('close-ad-btn').addEventListener('click', function() {
+            // Hide the ad
+            document.getElementById('popup-ad').style.display = 'none';
+
+            // Initialize and play the video after ad is closed
+            initPlayer();
+        });
+
+        // Clappr player initialization
+        function initPlayer() {
+            var player = new Clappr.Player({
+                source: 'http://flussonic.1mrgamingstreams.com:8888/daznlaliga/index.m3u8',  // Replace with your HLS stream URL
+                parentId: '#player',
+                autoPlay: true,        // Start playing automatically after ad closes
+                mute: false,           // Video starts with sound
+                height: '100%',
+                width: '100%',
+                poster: 'YOUR_POSTER_IMAGE_URL',  // Optional: Add a poster image for the video
+                playback: {
+                    hlsjsConfig: {
+                        maxBufferLength: 30,
+                        maxMaxBufferLength: 60
+                    }
+                },
+                plugins: [Clappr.Controls, Clappr.PipPlugin],  // PiP plugin for Picture-in-Picture support
+                mediacontrol: { seekbar: "#00FF00", buttons: "#FFFFFF" },  // Custom control colors
+                events: {
+                    onPlay: function() {
+                        console.log("Video started playing.");
+                    },
+                    onPause: function() {
+                        console.log("Video paused.");
+                    }
+                }
+            });
+        }
+
+        // Auto-close the ad and start the video after 10 seconds
+        setTimeout(function() {
+            document.getElementById('close-ad-btn').click();
+        }, 10000);  // Auto-close the ad after 10 seconds
+    </script>
+
+</body>
+</html>
